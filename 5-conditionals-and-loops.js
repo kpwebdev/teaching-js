@@ -180,3 +180,38 @@ for (let number = 0; number <= 10; number++) {
 // other loop in JS
 // do{} while()
 // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Loops_and_iteration
+
+// Assignment code start
+console.clear();
+
+function myDailyActivities() {
+  console.log("Woke up at 7:00 AM");
+  console.log("I brush my teeth");
+  console.log("I have lunch");
+  console.log("I do some code practice");
+}
+
+for (let day = 1; day <= 10; day++) {
+  console.log("=============", day, "=============");
+  myDailyActivities();
+}
+
+const learningLectures = [
+  "variables and scopes",
+  "functions",
+  "operators",
+  "conditionals and switch",
+];
+
+for (let learningLecture of learningLectures) {
+  const learningLectureIndex = learningLectures.indexOf(learningLecture);
+  const day = learningLectureIndex + 1;
+
+  const learningLectureInCapital =
+    learningLecture[0].toUpperCase() + learningLecture.slice(1);
+
+  console.log("=============", day, "=============");
+  myDailyActivities();
+  console.log("Attended session with KP on:", learningLectureInCapital);
+}
+// Assignment code ends
