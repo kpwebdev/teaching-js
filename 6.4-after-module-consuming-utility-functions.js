@@ -1,17 +1,22 @@
 // name import
-import { sum2, sub2, mul2, div2 } from "./6.3-after-module-utility-functions";
+import {
+  sum2,
+  sub2,
+  mul2,
+  div2,
+} from "./6.3-after-module-utility-functions.js";
 // import alias
 import {
   sum2 as sumFunc,
   sub2 as subFunc,
   mul2 as mulFunc,
   div2 as divFunc,
-} from "./6.3-after-module-utility-functions";
+} from "./6.3-after-module-utility-functions.js";
 // import all name exports and add them into a single variable
-import * as mathFunctions2 from "./6.3-after-module-utility-functions";
+import * as mathFunctions2 from "./6.3-after-module-utility-functions.js";
 
 // default import
-import mathFunctions from "./6.3-after-module-utility-functions";
+import mathFunctions from "./6.3-after-module-utility-functions.js";
 
 console.log("sum2(x, y):", sum2(x, y));
 console.log("sub2(x, y):", sub2(x, y));
