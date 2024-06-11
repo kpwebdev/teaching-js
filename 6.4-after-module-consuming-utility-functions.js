@@ -37,3 +37,7 @@ console.log("sumFunc(x, y):", sumFunc(x, y));
 console.log("subFunc(x, y):", subFunc(x, y));
 console.log("mulFunc(x, y):", mulFunc(x, y));
 console.log("divFunc(x, y):", divFunc(x, y));
+
+// Assignment
+// write different functions and variables in one file for example file1.js (name export and default export)
+// consume the functions and variables declared in the previous file in another file for example file2.js (name import, name aliased import, default import, import *)
