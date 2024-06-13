@@ -38,7 +38,7 @@ console.log("myName.substr(2, 5):", myName.substr(2, 5));
 console.log("myName.toUpperCase():", myName.toUpperCase());
 
 // toLowerCase method make all the letters in the string lower case
-console.log("myName.toUpperCase():", myName.toUpperCase());
+console.log("myName.toUpperCase():", myName.toLowerCase());
 
 // trim method removes all negative spaces at the start and the end in string
 console.log(
@@ -133,6 +133,36 @@ console.log("skills after calling splice method:", skills);
 // sort method returns alphabetically sorted array, be careful it modifies the original array
 console.log("skills.sort()", skills.sort());
 console.log("skills after calling sort method:", skills);
+
+// normal number sorting
+{
+  const skills = [2, 1, 5, 10, 50, 20, 1000];
+  console.log(
+    "skills.sort()",
+    skills.sort((a, b) => b - a)
+  );
+  console.log("skills after calling sort method:", skills);
+}
+
+// sorting for numbers in acceding fashion
+{
+  const skills = [2, 1, 5, 10, 50, 20, 1000];
+  console.log(
+    "skills.sort()",
+    skills.sort((a, b) => a - b)
+  ); //accending
+  console.log("skills after calling sort method:", skills);
+}
+
+// sorting for numbers in acceding fashion
+{
+  const skills = [2, 1, 5, 10, 50, 20, 1000];
+  console.log(
+    "skills.sort()",
+    skills.sort((a, b) => b - a)
+  ); //descending
+  console.log("skills after calling sort method:", skills);
+}
 
 // concat
 const newSkills = ["MongoDB", "MySQL"];
