@@ -249,7 +249,7 @@ console.log("Object.entries(developer):", Object.entries(developer));
     console.log("acc:", acc);
     console.log("val:", val);
     return acc + val;
-  }, 0);
+  });
   console.log("sumOfNumbers:", sumOfNumbers);
 
   console.log("===========reduce with skills===========");
@@ -262,3 +262,13 @@ console.log("Object.entries(developer):", Object.entries(developer));
   console.log("skillObj:", skillObj);
 }
 // advance array method ends
+
+// Assignment
+// 1) ======= starts
+// create an array
+// run all this methods: forEach, map, find, filter, reduce
+// 1) ======= ends
+// 2) ======= starts
+// create a page
+//
+// 2) ======= ends
