@@ -9,16 +9,81 @@
     <!-- <script src="3-functions.js"></script> -->
     <!-- <script src="4-operators.js"></script> -->
     <!-- <script src="5.conditionals-and-loops.js"></script> -->
-    <script src="6.1-before-module-utility-functions.js"></script>
-    <script src="6.2-before-module-consuming-utility-functions.js"></script>
+    <!-- <script src="6.1-before-module-utility-functions.js"></script>
+    <script src="6.2-before-module-consuming-utility-functions.js"></script> -->
     <!-- whenever you want to use 'export' and 'import' keywords put type="module" attribute on the script tag  -->
-    <script src="6.3-after-module-utility-functions.js" type="module"></script>
+    <!-- <script src="6.3-after-module-utility-functions.js" type="module"></script>
     <script
       src="6.4-after-module-consuming-utility-functions.js"
       type="module"
-    ></script>
+    ></script> -->
+    <!-- <script defer src="8.closures.js"></script> -->
   </head>
   <body>
-    <header><h1>Learning JS</h1></header>
+    <!-- <header><h1>Learning JS</h1></header> -->
+    <!-- <button>Click Me</button> -->
+    <header>
+      <nav>
+        <h1>Shopping Website</h1>
+      </nav>
+    </header>
+    <!-- add custom discount to all products -->
+    <section id="discount">
+      <input type="number" name="discountInput" id="discountInput" /><span
+        >&percnt;</span
+      >
+      <button>add</button>
+    </section>
+    <!-- search functionality for products -->
+    <section id="search-product">
+      <h2>Search For Product</h2>
+      <input type="search" name="searchProductInput" id="searchProductInput" />
+    </section>
+    <!-- section for product list -->
+    <section id="products">
+      <article id="product-1">
+        <h3>Product 1</h3>
+        <button>Add to cart</button>
+        <button>+</button>
+        <button>-</button>
+      </article>
+      <article id="product-2">
+        <h3>Product 2</h3>
+        <button>Add to cart</button>
+        <button>+</button>
+        <button>-</button>
+      </article>
+      <article id="product-3">
+        <h3>Product 3</h3>
+        <button>Add to cart</button>
+        <button>+</button>
+        <button>-</button>
+      </article>
+      <article id="product-4">
+        <h3>Product 4</h3>
+        <button>Add to cart</button>
+        <button>+</button>
+        <button>-</button>
+      </article>
+      <article id="product-5">
+        <h3>Product 5</h3>
+        <button>Add to cart</button>
+        <button>+</button>
+        <button>-</button>
+      </article>
+    </section>
+    <!-- search functionality for cart items -->
+    <section id="search-cart-item">
+      <h2>Search For Cart Item</h2>
+      <input
+        type="search"
+        name="searchCartItemInput"
+        id="searchCartItemInput"
+      />
+    </section>
+    <!-- section for the cart -->
+    <section id="cart">
+      <h2>Your Cart</h2>
+    </section>
   </body>
 </html>
