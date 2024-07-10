@@ -41,3 +41,42 @@ const updatedUser = { ...user, userName: "Randhika" };
 setUser(updatedUser);
 console.log(getUser());
 console.log("user === updatedUser", user === updatedUser);
+
+// second example of closure
+console.clear();
+/*
+Parent Function
+    Variable a
+    Child Function
+        Access Variable a
+return Child Function
+Child Function
+*/
+
+console.log(performance.memory);
+
+const startMemory = performance.memory.totalJSHeapSize;
+
+function parentFunction() {
+  let parentVariable = 5;
+
+  function childFunction() {
+    let childVariable = 10;
+    console.log(`parentVariable: ${parentVariable}`);
+    console.log(`childVariable: ${childVariable}`);
+    parentVariable++; // closure scope
+    childVariable++; // 11
+  }
+
+  return childFunction;
+}
+
+const childFunction = parentFunction();
+const childFunction2 = parentFunction();
+// console.log("-----------First Time-----------")
+// childFunction()
+// console.log("-----------Second Time-----------")
+// childFunction()
+// console.log("-----------Third Time-----------")
+// childFunction()
+parentFunction();
