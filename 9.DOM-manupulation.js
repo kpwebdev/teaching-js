@@ -136,7 +136,7 @@ function createAndAppendOnUl() {
   ul.append(textNodeOnRoot, "Text Before the newLi", newLi);
 }
 
-// createAndAppendOnUl();
+createAndAppendOnUl();
 
 // remove
 function removeFirstLi() {
@@ -148,8 +148,64 @@ function removeFirstLi() {
 // removeFirstLi();
 
 // removeChild
-// const ul2 = document
+const secondUl = document.querySelector("#secondList");
+
 function removeChildFromUl() {
   const secondChild = ul.children[1];
   ul.removeChild(secondChild);
 }
+
+function wrongWayToRemoveChildFromUl() {
+  const secondChild = ul.children[1];
+  secondUl.removeChild(secondChild);
+}
+
+// removeChildFromUl();
+// wrongWayToRemoveChildFromUl();
+
+// insertAdjacentElement
+function insertAdjacentElementToSecondLi() {
+  const secondLi = ul.children[1];
+  const newLi = document.createElement("li");
+  const newLiTextNode = document.createTextNode(
+    "I am inside the 2nd li before </li> tag"
+  );
+  newLi.appendChild(newLiTextNode);
+
+  secondLi.insertAdjacentElement("afterend", newLi);
+  // <li>Content</li>
+  // started race ======== ended race
+  // beforebegin <li> afterbegin
+  // beforeend </li> afterend
+  // afterbegin
+  // beforebegin
+  // afterend
+  // beforeend
+}
+// insertAdjacentToSecondLi();
+
+// insertAdjacentHTML
+function insertAdjacentHTMLToSecondLi() {
+  const secondLi = ul.children[1];
+  secondLi.insertAdjacentHTML(
+    "beforebegin",
+    `<figure>
+      <img src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR-AAD2jIQT0p1MirMajjcczk0yaNbZTFnTwA&s' />
+    <figcaption>Naruto Uzumaki</figcaption></figure>
+    <ul>
+      <li>Naruto</li>
+      <li>Sasuke</li>
+      <li>Sakura</li>
+      <li>Kakshi</li>
+    </ul>`
+  );
+}
+// insertAdjacentHTMLToSecondLi();
+
+// insertAdjacentText
+function insertAdjacentTextToSecondLi() {
+  const secondLI = ul.children[1];
+  secondLI.insertAdjacentText("beforebegin", "Hello World");
+}
+
+// insertAdjacentTextToSecondLi();
