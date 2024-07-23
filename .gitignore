@@ -1,0 +1,5 @@
+# directories that must not be commited to git repo
+.vscode/
+
+# files that must not be commited to git repo
+.env
