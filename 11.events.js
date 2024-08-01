@@ -5,7 +5,7 @@ const level3 = document.querySelector("#level3");
 const siblingLevel = document.querySelector("#siblingLevel");
 const form = document.querySelector("form");
 const anchorTag = document.querySelector("a");
-
+const scrollDiv = document.querySelector("#scrollMe");
 // old ways
 // levels.onclick = function () {
 //   console.log("You just clicked on levels");
@@ -71,6 +71,14 @@ form.addEventListener("submit", function (e) {
 anchorTag.addEventListener("", function (e) {
   e.preventDefault();
   console.log("click event:", e);
+});
+
+document.body.addEventListener("scroll", function (e) {
+  console.log("scroll event:", e);
+});
+
+scrollDiv.addEventListener("scroll", function (e) {
+  console.log("scroll event:", e);
 });
 
 async function fetchVideo(url) {
