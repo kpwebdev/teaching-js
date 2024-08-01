@@ -84,7 +84,12 @@ body {
   background-attachment: fixed;
 }
 
-h2,
-p {
-  color: white;
+#bathroom h2,
+#bathroom p {
+  /* color: white; */
+  background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR-AAD2jIQT0p1MirMajjcczk0yaNbZTFnTwA&s);
+  -webkit-background-clip: text;
+  background-size: cover;
+  background-repeat: no-repeat;
+  -webkit-text-fill-color: transparent;
 }
