@@ -14,9 +14,8 @@ function youWillGetJobPromiseCallback(resolveFunction, rejectFunction) {
 const jobPromise = new Promise(youWillGetJobPromiseCallback); // return a promise
 
 function thingsToAfterGettingJob(companyName) {
-  const newPara = (document.createElement(
-    "p"
-  ).innerHTML = `You got selected at ${companyName}`);
+  const newPara = (document.createElement("p").innerHTML =
+    `You got selected at ${companyName}`);
   document.body.appendChild(newPara);
   console.log(`I got selected at ${companyName}`);
   console.log("Celebrate");
@@ -205,3 +204,78 @@ function fetchPokemon() {
 
 fetchPokemonAsync();
 fetchPokemon();
+
+// difference between asyncronous browser API(s), callbacks, Promises
+
+// Promise based browser API
+fetch(
+  "https://images.unsplash.com/photo-1714738640189-677cc91c8a47?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+)
+  .then((response) => response.blob())
+  .then((blobFile) => console.log(blobFile))
+  .catch((err) => console.log("Something went wrong", err));
+
+// Asyncronous browser API
+const timeoutId = setTimeout(() => {
+  console.log("Time is up");
+}, 0);
+
+// callback function
+function greet() {
+  console.log("Hi There");
+}
+
+// higher order function
+function runFunction(greetFunction) {
+  greetFunction();
+}
+
+runFunction(() => console.log("How are you?"));
+
+// custom promise
+new Promise((resolve, reject) => {
+  resolve();
+}).then(() => console.log("I got resove"));
+
+// Another demonstration of promises
+new Promise(function (resolveFunction, rejectFunction) {
+  const genericError = new Error("I don't want to reply");
+  rejectFunction(genericError);
+  resolveFunction({ captainAmerica: "Lucky", ironMan: "Super Lucky" });
+})
+  .then(function (superman) {
+    console.log(
+      "I just got resolved.",
+      superman.captainAmerica,
+      superman.ironMan,
+    );
+  })
+  .catch((err) => console.log("Something went wrong", err));
+
+// sequencial promises execution
+function firstPokemon() {
+  return fetch("https://pokeapi.co/api/v2/pokemon/1")
+    .then((response) => response.json())
+    .then((data) => data);
+}
+
+function secondPokemon() {
+  return fetch("https://pokeapi.co/api/v2/pokemon/1000000000000000000")
+    .then((response) => {
+      console.log("response", response);
+
+      if (!response.ok) {
+        throw new URIError(`Server responded with ${response.status} code`);
+        // throw "Something went wrong by string"
+      }
+
+      return response.json();
+    })
+    .then((data) => data);
+}
+
+firstPokemon()
+  .then((pokemon) => console.log("first pokemon", pokemon))
+  .then(secondPokemon)
+  .then((pokemon) => console.log("second pokemon", pokemon))
+  .catch((err) => console.log("Something went wrong", err));
